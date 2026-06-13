@@ -14,7 +14,10 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://valkira-liard.vercel.app") // tu dominio en Vercel
+                        .allowedOrigins(
+                                "https://valkira-liard.vercel.app", // dominio principal
+                                "https://valkira-1p4xh2onl-angie-s-projects15.vercel.app" // dominio de preview
+                        ) // dominio de preview
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowCredentials(true);
             }
