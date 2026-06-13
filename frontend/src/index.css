@@ -1,0 +1,39 @@
+/* ===== MAIN CSS ENTRY POINT ===== */
+
+/* Import all styles */
+@import './styles/variables.css';
+@import './styles/global.css';
+@import './styles/layout.css';
+@import './styles/forms.css';
+@import './styles/buttons.css';
+@import './styles/pages/home.css';
+@import './styles/pages/login.css';
+/* register.css imports login.css internally */
+@import './styles/pages/register.css';
+@import './styles/pages/profile.css';
+@import './styles/pages/preferences.css';
+@import './styles/navbar.css';
+
+/* ===== ROOT SETUP ===== */
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-normal);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

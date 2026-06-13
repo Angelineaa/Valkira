@@ -1,0 +1,27 @@
+Host: acela.proxy.rlwy.net
+Puerto: 36282
+Usuario: root
+Contraseña: KPDSWYEOBatlWcWiiVROkOmNPLjFhWCq
+Base de datos: railway
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAVg-Bzof3d2YTNHIlGlcvKa5omKvhmfg8",
+  authDomain: "modaai-22997.firebaseapp.com",
+  projectId: "modaai-22997",
+  storageBucket: "modaai-22997.firebasestorage.app",
+  messagingSenderId: "1036884012101",
+  appId: "1:1036884012101:web:9bf714a336257cc4d9c72c",
+  measurementId: "G-EDY4LJC9G2"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);

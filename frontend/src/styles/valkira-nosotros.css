@@ -1,0 +1,107 @@
+:root {
+  --vk-cream: #FAF8F5;
+  --vk-bone: #F0EDE7;
+  --vk-charcoal: #1A1A1A;
+  --vk-warm-gray: #6B6560;
+  --vk-blush: #C4998A;
+  --vk-gold: #B8976A;
+  --vk-white: #FFFFFF;
+}
+
+.vk-nosotros-page {
+  padding: 10rem 3rem 4rem;
+  background: var(--vk-cream);
+  color: var(--vk-charcoal);
+}
+
+.vk-nosotros-hero {
+  background: linear-gradient(180deg, rgba(250, 248, 245, 0.95) 0%, rgba(240, 237, 231, 0.95) 100%);
+  border: 1px solid rgba(180, 160, 140, 0.18);
+  border-radius: 2rem;
+  padding: 3.5rem 4rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 20px 60px rgba(18, 18, 18, 0.04);
+}
+
+.vk-nosotros-hero-inner {
+  max-width: 800px;
+}
+
+.vk-eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--vk-warm-gray);
+}
+
+.vk-nosotros-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 4vw, 4.5rem);
+  line-height: 1.03;
+  margin: 0 0 1.25rem;
+  color: var(--vk-charcoal);
+}
+
+.vk-subtitle {
+  max-width: 680px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--vk-warm-gray);
+}
+
+.vk-nosotros-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.vk-nosotros-card {
+  background: var(--vk-white);
+  border: 1px solid rgba(180, 160, 140, 0.14);
+  border-radius: 1.75rem;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(18, 18, 18, 0.05);
+}
+
+.vk-nosotros-card h2 {
+  margin-top: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem;
+  color: var(--vk-charcoal);
+}
+
+.vk-nosotros-card p {
+  line-height: 1.9;
+  color: var(--vk-warm-gray);
+  margin-top: 1.25rem;
+}
+
+.vk-nosotros-card p + p {
+  margin-top: 1rem;
+}
+
+@media (max-width: 1024px) {
+  .vk-nosotros-page {
+    padding: 8rem 2rem 3rem;
+  }
+
+  .vk-nosotros-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .vk-nosotros-hero {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .vk-nosotros-hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .vk-nosotros-card {
+    padding: 1.75rem;
+  }
+}

@@ -1,0 +1,23 @@
+/* Extracted from Valikira/css/global.css - global tokens and nav/footer basics (adapted) */
+
+*:where(*),*::before,*::after{box-sizing:border-box}
+:root{--cream:#FAF8F5;--bone:#F0EDE7;--charcoal:#1A1A1A;--warm-gray:#6B6560;--blush:#C4998A;--blush-light:#EDD9D1;--gold:#B8976A;--white:#FFFFFF}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(250,248,245,0.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(180,160,140,0.15)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;letter-spacing:0.25em;color:var(--charcoal);text-decoration:none}
+.nav-logo span{color:var(--blush)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-gray);text-decoration:none;transition:color 0.2s}
+.nav-actions{display:flex;align-items:center;gap:1.25rem}
+
+footer{background:var(--charcoal);border-top:1px solid rgba(255,255,255,0.08);padding:3rem 3rem 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;letter-spacing:0.2em;color:var(--cream);margin-bottom:1rem}
+
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  footer{padding:2rem 1.5rem}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+}

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../../.."
+		}
+	],
+	"settings": {
+		"jdk.advanced.disable.nbjavac": false,
+		"liveServer.settings.multiRootWorkspaceName": "Valikiraprueba",
+		"liveServer.settings.port": 5501,
+		"powershell.cwd": "Proyecto Comercio"
+	}
+}

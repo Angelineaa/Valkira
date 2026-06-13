@@ -1,0 +1,8 @@
+:root{--vk-cream:#FAF8F5;--vk-charcoal:#1A1A1A}
+.vk-favs-page{padding:8rem 3rem 4rem;background:var(--vk-cream);color:var(--vk-charcoal)}
+.vk-favs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.vk-fav-card{background:#fff;padding:1rem;border-radius:1rem;display:flex;flex-direction:column;gap:0.5rem}
+.vk-fav-card .img-wrap img{width:100%;height:160px;object-fit:cover;border-radius:0.5rem}
+.fav-actions{display:flex;gap:0.5rem}
+
+@media(max-width:900px){.vk-favs-grid{grid-template-columns:1fr}}

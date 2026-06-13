@@ -1,0 +1,34 @@
+/* Valkira auth/profile styles - adapted for React components */
+:root{--vk-cream:#FAF8F5;--vk-charcoal:#1A1A1A;--vk-warm:#6B6560;--vk-blush:#C4998A}
+body{background:var(--vk-cream)}
+.valkira-auth-page{display:flex;align-items:stretch;min-height:100vh;padding-top:72px}
+.valkira-hero{flex:1;padding:4rem 3rem;background:transparent;display:flex;flex-direction:column;justify-content:center}
+.valkira-hero .eyebrow{font-size:0.9rem;color:var(--vk-warm);letter-spacing:0.12em;text-transform:uppercase}
+.valkira-hero h1{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:var(--vk-charcoal);line-height:1.05;margin-top:0.6rem}
+.valkira-hero p{color:var(--vk-warm);max-width:44ch;margin-top:1rem}
+.valkira-auth-card{width:420px;background:#fff;border-radius:8px;padding:2.25rem;box-shadow:0 8px 30px rgba(26,26,26,0.08);margin:2.5rem}
+.valkira-auth-header h2{font-family:'Cormorant Garamond',serif;margin-bottom:0.25rem}
+.valkira-auth-sub{color:var(--vk-warm);font-size:0.95rem;margin-bottom:1rem}
+.valkira-form .form-group{margin-bottom:1rem}
+.valkira-form label{display:block;font-size:0.85rem;color:var(--vk-warm);margin-bottom:0.35rem}
+.valkira-form input{width:100%;padding:0.6rem;border:1px solid #e6e2dd;border-radius:6px}
+.btn-primary{background:var(--vk-charcoal);color:white;border:none;padding:0.7rem 1rem;border-radius:6px;cursor:pointer;width:100%}
+.btn-ghost{background:transparent;border:1px solid #eee;padding:0.6rem;border-radius:6px;width:100%}
+.auth-divider{margin:1rem 0;text-align:center;color:#bfb7b0}
+.google-button{display:flex;align-items:center;gap:0.6rem;justify-content:center;padding:0.6rem;border:1px solid #eee;border-radius:6px;width:100%;background:white}
+.auth-footer{margin-top:1rem;text-align:center;color:var(--vk-warm)}
+
+/* Profile adjustments */
+.valkira-profile-page .profile-header h1{font-family:'Cormorant Garamond',serif;color:var(--vk-charcoal)}
+.valkira-profile-page .profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.valkira-profile-page .profile-card{background:white;padding:1.25rem;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,0.04)}
+.valkira-profile-page .profile-avatar{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--vk-blush);color:white;font-size:1.6rem}
+.success-message{background:#e6f7ec;color:#1b6a3b;padding:0.6rem;border-radius:6px;margin-bottom:0.8rem}
+.error-message{background:#fff1f0;color:#b32a2a;padding:0.6rem;border-radius:6px;margin-bottom:0.8rem}
+
+@media(max-width:900px){
+  .valkira-auth-page{flex-direction:column;padding-top:60px}
+  .valkira-hero{display:none}
+  .valkira-auth-card{width:auto;margin:1rem}
+  .valkira-profile-page .profile-grid{grid-template-columns:1fr}
+}

@@ -1,0 +1,277 @@
+/* ===== BUTTON BASE ===== */
+
+button,
+.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+button:disabled,
+.button:disabled,
+input[type="submit"]:disabled,
+input[type="reset"]:disabled,
+input[type="button"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:active,
+.button:active {
+  transform: scale(0.98);
+}
+
+/* ===== BUTTON SIZES ===== */
+
+.button-xs {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-sm);
+}
+
+.button-sm {
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: var(--font-size-sm);
+}
+
+.button-md {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+}
+
+.button-lg {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-lg);
+}
+
+.button-xl {
+  padding: var(--spacing-md) var(--spacing-2xl);
+  font-size: var(--font-size-lg);
+  min-height: 50px;
+}
+
+/* Default size (MD) */
+button,
+.button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+}
+
+/* ===== PRIMARY BUTTON ===== */
+
+.button-primary,
+button.button-primary,
+input[type="submit"] {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border: 2px solid var(--color-primary);
+}
+
+.button-primary:hover:not(:disabled),
+button.button-primary:hover:not(:disabled),
+input[type="submit"]:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.button-primary:focus,
+button.button-primary:focus,
+input[type="submit"]:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ===== SECONDARY BUTTON ===== */
+
+.button-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-text-inverse);
+  border: 2px solid var(--color-secondary);
+}
+
+.button-secondary:hover:not(:disabled) {
+  background-color: var(--color-secondary-hover);
+  border-color: var(--color-secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.button-secondary:focus {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* ===== OUTLINE BUTTON ===== */
+
+.button-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.button-outline:hover:not(:disabled) {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.button-outline:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ===== GHOST BUTTON ===== */
+
+.button-ghost {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 2px solid transparent;
+}
+
+.button-ghost:hover:not(:disabled) {
+  background-color: var(--color-bg-secondary);
+  border-color: var(--color-border);
+  transform: translateY(-1px);
+}
+
+.button-ghost:focus {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}
+
+/* ===== SUCCESS BUTTON ===== */
+
+.button-success {
+  background-color: var(--color-success);
+  color: var(--color-text-inverse);
+  border: 2px solid var(--color-success);
+}
+
+.button-success:hover:not(:disabled) {
+  filter: brightness(0.9);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.button-success:focus {
+  outline: 2px solid var(--color-success);
+  outline-offset: 2px;
+}
+
+/* ===== DANGER/ERROR BUTTON ===== */
+
+.button-danger,
+.button-error {
+  background-color: var(--color-error);
+  color: var(--color-text-inverse);
+  border: 2px solid var(--color-error);
+}
+
+.button-danger:hover:not(:disabled),
+.button-error:hover:not(:disabled) {
+  filter: brightness(0.9);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.button-danger:focus,
+.button-error:focus {
+  outline: 2px solid var(--color-error);
+  outline-offset: 2px;
+}
+
+/* ===== FULL WIDTH BUTTON ===== */
+
+.button-full {
+  width: 100%;
+}
+
+/* ===== ICON BUTTONS ===== */
+
+.button-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border-radius: var(--radius-lg);
+}
+
+.button-icon-sm {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: var(--radius-md);
+}
+
+.button-icon-lg {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  border-radius: var(--radius-xl);
+}
+
+/* ===== LOADING STATE ===== */
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== BUTTON GROUP ===== */
+
+.button-group {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.button-group.vertical {
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.button-group.block > button,
+.button-group.block > .button {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  button,
+  .button,
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    width: 100%;
+  }
+
+  .button-group {
+    gap: var(--spacing-md);
+  }
+
+  .button-group:not(.vertical) {
+    flex-direction: column;
+  }
+}

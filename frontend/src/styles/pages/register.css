@@ -1,0 +1,134 @@
+/* ===== REGISTER PAGE ===== */
+/* Reutiliza estilos base de auth (login.css) - se importa en index.css primero */
+
+/* ===== CUSTOM REGISTER STYLES ===== */
+
+.password-strength {
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.password-strength-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-xs);
+  display: block;
+  color: var(--color-text-secondary);
+}
+
+.password-strength-bar {
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-bg-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: var(--spacing-xs);
+}
+
+.password-strength-fill {
+  height: 100%;
+  width: 0;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base), background-color var(--transition-base);
+}
+
+.password-strength-fill.weak {
+  width: 33%;
+  background-color: var(--color-error);
+}
+
+.password-strength-fill.medium {
+  width: 66%;
+  background-color: var(--color-warning);
+}
+
+.password-strength-fill.strong {
+  width: 100%;
+  background-color: var(--color-success);
+}
+
+.password-strength-text {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.password-strength-text.weak {
+  color: var(--color-error);
+}
+
+.password-strength-text.medium {
+  color: var(--color-warning);
+}
+
+.password-strength-text.strong {
+  color: var(--color-success);
+}
+
+/* ===== TERMS ACCEPTANCE ===== */
+
+.terms-section {
+  background-color: var(--color-bg-secondary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.terms-section label {
+  margin-bottom: 0;
+}
+
+.terms-checkbox {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+}
+
+.terms-checkbox input[type="checkbox"] {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.terms-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.terms-text a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+}
+
+.terms-text a:hover {
+  text-decoration: underline;
+}
+
+/* ===== FORM VALIDATION ===== */
+
+.form-group.has-error input {
+  border-color: var(--color-error);
+}
+
+.form-group.has-error input:focus {
+  box-shadow: 0 0 0 3px var(--color-error-light);
+}
+
+.form-group.has-success input {
+  border-color: var(--color-success);
+}
+
+.form-group.has-success input:focus {
+  box-shadow: 0 0 0 3px var(--color-success-light);
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 480px) {
+  .terms-section {
+    padding: var(--spacing-md);
+  }
+
+  .terms-text {
+    font-size: var(--font-size-xs);
+  }
+}
