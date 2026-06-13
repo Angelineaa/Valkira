@@ -31,6 +31,17 @@ export default function Home() {
     navigate(categoria ? `/catalogo?cat=${categoria}` : '/catalogo');
   };
 
+  const formatRecommendationReason = (reason) => {
+    if (!reason) return '';
+    const parts = String(reason).split('·').map((p) => p.trim()).filter(Boolean);
+    if (parts.length === 0) return reason;
+    const sentences = parts.map((p) => {
+      const t = p.charAt(0).toUpperCase() + p.slice(1).replace(/\s*\.$/, '');
+      return t.endsWith('.') ? t : `${t}.`;
+    });
+    return sentences.join(' ');
+  };
+
   const { favorites, toggleFavorite } = useStore();
 
   useEffect(() => {
@@ -98,7 +109,10 @@ export default function Home() {
         <section className="section recommendations-section">
           <div className="section-header">
             <h2 className="section-title">Tus recomendaciones personalizadas</h2>
-            <button className="section-link" onClick={() => goToCatalog()}>Ver catálogo</button>
+            <div className="section-actions">
+              <button className="section-link" onClick={() => goToCatalog()}>Ver catálogo</button>
+              <button className="section-link" onClick={() => navigate('/recomendaciones')}>Ver recomendaciones</button>
+            </div>
           </div>
 
           {recommendationsLoading ? (
@@ -114,7 +128,9 @@ export default function Home() {
                     <div className="recommendation-info">
                       <p className="recommendation-name">{product.nombre}</p>
                       <strong className="recommendation-price">${product.precio.toLocaleString()}</strong>
-                      {product.recommendationReason ? <p className="recommendation-reason">{product.recommendationReason}</p> : null}
+                      {product.recommendationReason ? (
+                        <p className="recommendation-reason">{formatRecommendationReason(product.recommendationReason)}</p>
+                      ) : null}
                     </div>
                   </div>
                 ))

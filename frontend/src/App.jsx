@@ -12,6 +12,7 @@ import Producto from './pages/Producto';
 import Cart from './pages/Cart';
 import Favorites from './pages/Favorites';
 import Nosotros from './pages/Nosotros';
+import Recomendaciones from './pages/Recomendaciones';
 import Checkout from './pages/Checkout';
 import OrderConfirmation from './pages/OrderConfirmation';
 import Orders from './pages/Orders';
@@ -36,6 +37,7 @@ function App() {
           <Route path="/preferences" element={<Preferences />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/catalogo" element={<Catalogo />} />
+          <Route path="/recomendaciones" element={<Recomendaciones />} />
           <Route path="/producto/:id" element={<Producto />} />
           <Route path="/nosotros" element={<Nosotros />} />
           <Route path="/cart" element={<Cart />} />

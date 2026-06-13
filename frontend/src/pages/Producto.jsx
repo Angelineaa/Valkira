@@ -44,7 +44,16 @@ export default function Producto(){
         const res = await fetch(`${API_BASE}/api/products/${id}`);
         if (res.ok) {
           const data = await res.json();
-          setProd(mapApiProduct(data));
+          const apiProduct = mapApiProduct(data);
+          const categoryKey = apiProduct?.categoria?.toLowerCase?.() || '';
+          const isApiAccessory = ['accesorios', 'accessories'].includes(categoryKey);
+          if ((!Array.isArray(apiProduct?.tallas) || apiProduct.tallas.length === 0) && !isApiAccessory) {
+            const local = getLocalProductoById(id);
+            if (local?.tallas?.length) {
+              apiProduct.tallas = local.tallas;
+            }
+          }
+          setProd(apiProduct);
         } else {
           const local = getLocalProductoById(id);
           setProd(local || null);
@@ -60,11 +69,25 @@ export default function Producto(){
     loadProduct();
   }, [id]);
 
+  const categoryKey = prod?.categoria?.toLowerCase?.() || '';
+  const isAccessory = ['accesorios', 'accessories'].includes(categoryKey);
+  const productSizes = Array.isArray(prod?.tallas)
+    ? prod.tallas
+    : typeof prod?.tallas === 'string'
+      ? prod.tallas.split(',').map((size) => size.trim()).filter(Boolean)
+      : [];
+  const hasSizeOptions = productSizes.length > 0;
+
   useEffect(() => {
-    if (prod?.tallas?.length) {
-      setSelectedSize(prod.tallas[0]);
+    if (!prod) return;
+    if (hasSizeOptions && !isAccessory) {
+      setSelectedSize(productSizes[0]);
+    } else if (isAccessory) {
+      setSelectedSize('Única');
+    } else {
+      setSelectedSize('');
     }
-  }, [prod]);
+  }, [prod, hasSizeOptions, isAccessory, productSizes]);
 
   useEffect(() => {
     if (!prod || !isLoggedIn) {
@@ -156,16 +179,18 @@ export default function Producto(){
               Talla <span className="guia-link">Guía de tallas</span>
             </div>
             <div className="sizes-grid">
-              {prod.tallas?.length ? prod.tallas.map((size) => (
-                <button
-                  key={size}
-                  type="button"
-                  className={`size-dot ${selectedSize === size ? 'selected' : ''}`}
-                  onClick={() => setSelectedSize(size)}
-                >
-                  {size}
-                </button>
-              )) : (
+              {hasSizeOptions && !isAccessory ? (
+                productSizes.map((size) => (
+                  <button
+                    key={size}
+                    type="button"
+                    className={`size-dot ${selectedSize === size ? 'selected' : ''}`}
+                    onClick={() => setSelectedSize(size)}
+                  >
+                    {size}
+                  </button>
+                ))
+              ) : (
                 <span className="size-dot selected">Única</span>
               )}
             </div>

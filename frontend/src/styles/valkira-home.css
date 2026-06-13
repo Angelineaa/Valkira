@@ -153,6 +153,8 @@
   justify-content:space-between;
   margin-bottom:3rem;
 }
+
+.section-actions{display:flex;gap:0.75rem;align-items:center}
 .section-title{
   font-family:'Cormorant Garamond',serif;
   font-size:2.2rem;
@@ -405,6 +407,13 @@
   color: var(--warm-gray);
   line-height: 1.4;
 }
+
+.preference-block{background:var(--cream);padding:1.5rem;border-radius:0.75rem;margin-bottom:1.5rem;border:1px solid var(--bone)}
+.preference-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;margin-bottom:0.6rem;color:var(--charcoal)}
+.preference-desc{color:var(--warm-gray);margin-bottom:0.8rem}
+.preference-list{list-style:none;padding-left:0;margin:0 0 0.8rem 0}
+.preference-list li{margin:0.4rem 0;color:var(--charcoal)}
+.hint{font-size:0.85rem;color:var(--warm-gray);margin-top:0.6rem}
 
 .recommendation-loading,
 .recommendation-error,

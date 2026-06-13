@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: backend
+    env: java
+    root: backend
+    buildCommand: ./mvnw -DskipTests package
+    startCommand: java -jar target/backend-0.0.1-SNAPSHOT.jar
