@@ -23,6 +23,25 @@ import Contact from './pages/Contact';
 import LegalPage from './pages/LegalPage';
 import './styles/global.css';
 import './styles/valkira-global.css';
+import { useEffect, useState } from "react";
+import { getHealth } from "./services/api";
+
+function HealthPage() {
+  const [status, setStatus] = useState("");
+
+  useEffect(() => {
+    getHealth()
+      .then(setStatus)
+      .catch(() => setStatus("❌ Backend no disponible"));
+  }, []);
+
+  return (
+    <div>
+      <h2>Health Check</h2>
+      <p>{status}</p>
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -51,6 +70,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/legal/:topic" element={<LegalPage />} />
           <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/health" element={<HealthPage />} />
         </Routes>
       </main>
       <Footer />

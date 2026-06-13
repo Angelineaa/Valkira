@@ -164,3 +164,15 @@ export const firebaseLogin = async (idToken) => {
   });
   return handleResponse(response, 'Error al iniciar sesión con Firebase');
 };
+// Health check endpoint
+export const getHealth = async () => {
+  const url = `${API_BASE}/health`;
+  try {
+    const response = await fetch(url);
+    const data = await response.text();
+    return data;
+  } catch (err) {
+    console.error('Error al verificar el estado del backend:', err);
+    throw new Error('No se pudo conectar al backend');
+  }
+};
