@@ -7,11 +7,11 @@ WORKDIR /app
 # Copia el contenido del backend
 COPY . .
 
-# Compila el proyecto con Maven
+# Da permisos de ejecución al wrapper de Maven
+RUN chmod +x mvnw
+
+# Compila el proyecto
 RUN ./mvnw clean package -DskipTests
 
-# Expone el puerto del backend
 EXPOSE 8080
-
-# Ejecuta el JAR generado
 CMD ["java", "-jar", "target/*.jar"]
