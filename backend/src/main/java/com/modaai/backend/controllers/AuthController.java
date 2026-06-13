@@ -2,6 +2,7 @@ package com.modaai.backend.controllers;
 
 import java.util.Map;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,7 @@ import com.modaai.backend.services.PasswordResetService;
 
 import jakarta.validation.Valid;
 
-
+@CrossOrigin(origins = "https://valkira-liard.vercel.app")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
